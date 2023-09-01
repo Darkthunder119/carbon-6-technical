@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .app {
-    @apply p-2 bg-primaryPetrol w-screen h-screen text-offWhite;
-  }
+    .productListContainer {
+        @apply p-2 flex gap-4;
+    }
 }

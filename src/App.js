@@ -1,5 +1,12 @@
+import Landing from './components/Landing/Landing';
+import { CartProvider } from './utils/context/cartContext';
+
 function App() {
-    return <div className="app">test</div>;
+    return (
+        <CartProvider>
+            <Landing />
+        </CartProvider>
+    );
 }
 
 export default App;

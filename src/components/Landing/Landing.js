@@ -1,0 +1,12 @@
+import Header from '../Header/Header';
+import ProductList from '../ProductList/ProductList';
+import './landing.css';
+
+const Landing = () => (
+        <div className="landingContainer">
+            <Header />
+            <ProductList />
+        </div>
+    );
+
+export default Landing;

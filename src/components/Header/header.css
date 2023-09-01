@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .headerContainer {
+        @apply px-2 flex justify-between items-center content-center gap-2;
+    }
+}

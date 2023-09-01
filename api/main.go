@@ -32,7 +32,14 @@ var products = []Product{
 }
 var mu sync.Mutex
 
+// had to manually add CORS
+
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+}
+
 func getProducts(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	mu.Lock()
 	defer mu.Unlock()
 	w.Header().Set("Content-Type", "application/json")
