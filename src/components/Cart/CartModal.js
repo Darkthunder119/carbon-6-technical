@@ -1,9 +1,10 @@
-import { Modal, Typography } from '@mui/material';
+import { DeleteForeverSharp } from '@mui/icons-material';
+import { IconButton, Modal, Typography } from '@mui/material';
 
 import './cartmodal.css';
 import { totalCost } from '../../utils/helpers/math.helpers';
 
-const CartModal = ({ open, handleClose, products }) => (
+const CartModal = ({ open, handleClose, products, dispatch }) => (
     <div>
         <Modal
             open={open}
@@ -22,7 +23,15 @@ const CartModal = ({ open, handleClose, products }) => (
                 {products?.map((product, index) => (
                     <div key={index} className="cartItems">
                         <div>{product.name}</div>
-                        <div>{product.price}</div>
+                        <div className="cartPrice">
+                            {product.price}
+                            <IconButton
+                                color="error"
+                                onClick={() => dispatch({ type: 'removeFromCart', payload: product.id })}
+                            >
+                                <DeleteForeverSharp />
+                            </IconButton>
+                        </div>
                     </div>
                 ))}
                 {!products.length && (

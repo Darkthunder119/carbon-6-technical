@@ -8,8 +8,10 @@ const cartReducer = (state, action) => {
             return { products: [...state.products, action.payload] };
         }
         case 'removeFromCart': {
-            // to fix this after i add items
-            return { products: [...state.products, action.payload] };
+            const index = state.products.findIndex((item) => item.id === action.payload);
+            const newProducts = state.products.toSpliced(index, 1);
+
+            return { products: [...newProducts] };
         }
         default: {
             throw new Error(`Unhandled action type: ${action.type}`);

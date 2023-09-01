@@ -11,6 +11,7 @@ const Header = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const {
         state: { products },
+        dispatch,
     } = useCart();
 
     return (
@@ -21,7 +22,12 @@ const Header = () => {
                     Cart
                 </Button>
             </div>
-            <CartModal open={isCartOpen} handleClose={() => setIsCartOpen(false)} products={products} />
+            <CartModal
+                open={isCartOpen}
+                handleClose={() => setIsCartOpen(false)}
+                products={products}
+                dispatch={dispatch}
+            />
         </>
     );
 };
