@@ -4,6 +4,6 @@
 
 @layer components {
     .productListContainer {
-        @apply p-2 flex gap-4;
+        @apply p-2 grid gap-4 grid-cols-4 grid-rows-3;
     }
 }

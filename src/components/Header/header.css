@@ -6,4 +6,7 @@
     .headerContainer {
         @apply px-2 flex justify-between items-center content-center gap-2;
     }
+    .cartButton {
+        @apply text-lg px-4 mt-1 text-primaryPetrol !important;
+    }
 }

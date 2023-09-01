@@ -5,7 +5,7 @@ import './header.css';
 const Header = () => (
     <div className="headerContainer">
         <h1 className="text-2xl">Our Products</h1>
-        <Button className="text-lg px-4 mt-1" endIcon={<ShoppingCartSharp />}>
+        <Button className="cartButton" endIcon={<ShoppingCartSharp />}>
             Cart
         </Button>
     </div>
