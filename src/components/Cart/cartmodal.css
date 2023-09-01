@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .cartContent {
+        @apply absolute bg-offWhite top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-2 gap-2 text-primaryPetrol;
+    }
+    .cartItems {
+        @apply flex justify-between w-[300px] md:w-[600px] lg:w-[900px];
+    }
+}

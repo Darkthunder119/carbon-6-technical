@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
     };
 
     return (
-        <Card sx={{ minWidth: 275, maxWidth: 300 }} className="productCardContainer">
+        <Card sx={{ minWidth: 275, maxWidth: 350 }} className="productCardContainer">
             <div className="p-2">
                 <Typography className="cardHeaderText">{product.name}</Typography>
                 <Typography className="cardText" sx={{ mb: 1.5 }}>
