@@ -1,6 +1,5 @@
 module.exports = {
     root: true,
-    parser: '@typescript-eslint/parser',
     settings: {
         'react': {
             version: 'detect',
@@ -8,23 +7,17 @@ module.exports = {
         'import/resolver': {
             node: {
                 paths: ['src'],
-                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                extensions: ['.js', '.jsx'],
             },
         },
     },
-    extends: [
-        'eslint:recommended',
-        'plugin:import/recommended',
-        'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended',
-        'prettier',
-    ],
+    extends: ['eslint:recommended', 'plugin:import/recommended', 'plugin:react/recommended', 'prettier'],
     parserOptions: {
         ecmaVersion: 2021,
         sourceType: 'module',
     },
     env: { es6: true, node: true, browser: true },
-    plugins: ['react', 'prettier', '@typescript-eslint', 'import'],
+    plugins: ['react', 'prettier', 'import'],
     rules: {
         'complexity': ['warn', 10],
         'max-depth': ['warn', 5],
@@ -114,7 +107,6 @@ module.exports = {
         'import/named': 'off',
         'import/newline-after-import': 'warn',
         'import/no-duplicates': 'warn',
-        '@typescript-eslint/no-unused-vars': ['warn'],
         'react/prop-types': 'off',
         'react/display-name': 'off',
         'react/react-in-jsx-scope': 'off',

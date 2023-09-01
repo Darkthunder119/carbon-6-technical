@@ -1,8 +1,8 @@
 # Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Added Husky, Lint-staged, Prettier, ESLint Configs, Typescript and Tailwindcss on top to create a basic boilerplate
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Added Husky, Lint-staged, Prettier, ESLint Configs and Tailwindcss on top to create a basic boilerplate
 
-## Available Scripts
+## How to run the application
 
 In the project directory, you can run:
 
@@ -18,3 +18,7 @@ You may also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `go run ./api/main.go`
+
+Runs the backend server that hosts the API. This is needed to display the products.
