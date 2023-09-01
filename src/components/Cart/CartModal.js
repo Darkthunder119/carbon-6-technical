@@ -24,7 +24,7 @@ const CartModal = ({ open, handleClose, products, dispatch }) => (
                     <div key={index} className="cartItems">
                         <div>{product.name}</div>
                         <div className="cartPrice">
-                            {product.price}
+                            <span>{product.price}</span>
                             <IconButton
                                 color="error"
                                 onClick={() => dispatch({ type: 'removeFromCart', payload: product.id })}
