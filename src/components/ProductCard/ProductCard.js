@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { AddShoppingCartSharp } from '@mui/icons-material';
 import { Card, Button, Typography } from '@mui/material';
 
@@ -35,4 +37,4 @@ const ProductCard = ({ product }) => {
     );
 };
 
-export default ProductCard;
+export default memo(ProductCard);

@@ -21,8 +21,7 @@ const ProductList = () => {
 
     useEffect(() => {
         if (data) {
-            const categoryArray = data.map((product) => product.category);
-            const uniqueCategories = [...new Set(categoryArray)];
+            const uniqueCategories = [...new Set(data.map((product) => product.category))];
 
             setCategories(uniqueCategories);
         }
