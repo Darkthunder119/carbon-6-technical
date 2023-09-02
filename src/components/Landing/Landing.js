@@ -3,10 +3,10 @@ import ProductList from '../ProductList/ProductList';
 import './landing.css';
 
 const Landing = () => (
-        <div className="landingContainer">
-            <Header />
-            <ProductList />
-        </div>
-    );
+    <div className="landingContainer" data-testid="landing">
+        <Header />
+        <ProductList />
+    </div>
+);
 
 export default Landing;

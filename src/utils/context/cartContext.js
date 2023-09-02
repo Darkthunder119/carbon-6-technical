@@ -9,9 +9,12 @@ const cartReducer = (state, action) => {
         }
         case 'removeFromCart': {
             const index = state.products.findIndex((item) => item.id === action.payload);
-            const newProducts = state.products.toSpliced(index, 1);
 
-            return { products: [...newProducts] };
+            const newProducts = [...state.products];
+
+            newProducts.splice(index, 1);
+
+            return { products: newProducts };
         }
         default: {
             throw new Error(`Unhandled action type: ${action.type}`);
