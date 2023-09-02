@@ -19,6 +19,7 @@ const ProductList = () => {
         setSelectedCategory(event.target.value === 'clear' ? '' : event.target.value);
     };
 
+    // get all the unique categories from the list of items. Ideally there would be a BE endpoint for this
     useEffect(() => {
         if (data) {
             const uniqueCategories = [...new Set(data.map((product) => product.category))];
@@ -42,7 +43,7 @@ const ProductList = () => {
                             </MenuItem>
                         ))}
                         <MenuItem key="clear" value="clear">
-                            <span className="text-primaryPetrol">Clear selection</span>
+                            <span className="text-primaryPetrol">Show All</span>
                         </MenuItem>
                     </Select>
                 </FormControl>

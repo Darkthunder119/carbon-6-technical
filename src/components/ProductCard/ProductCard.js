@@ -19,11 +19,11 @@ const ProductCard = ({ product }) => {
                 <Typography className="cardText" sx={{ mb: 1.5 }}>
                     {product.category}
                 </Typography>
-                <Typography className="cardText" variant="body2">
-                    $ {product.price}
-                </Typography>
             </div>
             <div>
+                <Typography className="cardText p-2" variant="body2">
+                    $ {product.price}
+                </Typography>
                 <Button
                     size="small"
                     endIcon={<AddShoppingCartSharp className="addToCartIcon" />}

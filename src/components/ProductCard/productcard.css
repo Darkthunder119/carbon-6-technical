@@ -13,7 +13,7 @@
         @apply text-lg !important;
     }
     .addToCartButton {
-        @apply text-offWhite bg-primaryPetrol !important;
+        @apply text-offWhite bg-primaryPetrol ml-2 !important;
     }
     .addToCartIcon {
         @apply text-offWhite !important;
