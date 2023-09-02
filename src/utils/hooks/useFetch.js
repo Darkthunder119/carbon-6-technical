@@ -22,7 +22,7 @@ const useFetch = (url) => {
                 setData(json);
                 setError(null);
             } catch (error) {
-                setError(`${error} Could not Fetch Data `);
+                setError(`Could not Fetch Data: ${error}`);
                 setIsPending(false);
             }
         };

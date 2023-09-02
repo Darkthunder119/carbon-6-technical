@@ -1,18 +1,58 @@
+import { useEffect, useState } from 'react';
+
+import { FilterAltSharp } from '@mui/icons-material';
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+
+import { API_URL } from '../../utils/constants/constants';
 import useFetch from '../../utils/hooks/useFetch';
 import ProductCard from '../ProductCard/ProductCard';
 
 import './productlist.css';
 
 const ProductList = () => {
-    const { data, isPending, error } = useFetch('http://localhost:8080/api/products'); // using the URL directly here instead of in a .env file since this is easier to run for challenge purposes. In real world, this will be in env variables
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const [categories, setCategories] = useState([]);
+
+    const { data, isPending, error } = useFetch(API_URL);
+
+    const handleChange = (event) => {
+        setSelectedCategory(event.target.value);
+    };
+
+    useEffect(() => {
+        if (data) {
+            const categoryArray = data.map((product) => product.category);
+            const uniqueCategories = [...new Set(categoryArray)];
+
+            setCategories(uniqueCategories);
+        }
+    }, [data]);
 
     return (
-        <div className="productListContainer">
-            {isPending && <>Loading...</>}
-            {data?.map((product) => (
-                <ProductCard product={product} key={product.id} />
-            ))}
-            {error && <>Server Error : Unable to Fetch Data, Please Try Again</>}
+        <div>
+            <div className="flex justify-end">
+                <FormControl className="w-[200px]">
+                    <InputLabel id="select-label">
+                        Filter <FilterAltSharp />
+                    </InputLabel>
+                    <Select labelId="select-label" value={selectedCategory} label="Filter By" onChange={handleChange}>
+                        {categories.map((category, i) => (
+                            <MenuItem value={category} key={i}>
+                                {category}
+                            </MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
+            </div>
+            <div className="productListContainer">
+                {isPending && <>Loading...</>}
+                {data
+                    ?.filter((product) => (selectedCategory ? product.category === selectedCategory : product))
+                    .map((product) => (
+                        <ProductCard product={product} key={product.id} />
+                    ))}
+                {error && <>{error}</>}
+            </div>
         </div>
     );
 };
