@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
                     {product.category}
                 </Typography>
                 <Typography className="cardText" variant="body2">
-                    {product.price}
+                    $ {product.price}
                 </Typography>
             </div>
             <div>
@@ -29,6 +29,7 @@ const ProductCard = ({ product }) => {
                     endIcon={<AddShoppingCartSharp className="addToCartIcon" />}
                     className="addToCartButton"
                     onClick={addToCart}
+                    data-testid="AddToCart"
                 >
                     Add To Cart
                 </Button>
