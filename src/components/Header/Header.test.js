@@ -26,7 +26,6 @@ test('renders Header component and opens CartModal when button is clicked', () =
 
     expect(cartButton).toBeInTheDocument();
 
-    // Click the cart button
     fireEvent.click(cartButton);
 
     // Check if the CartModal component is opened with the correct props

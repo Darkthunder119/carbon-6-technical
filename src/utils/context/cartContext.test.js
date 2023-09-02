@@ -4,9 +4,7 @@ import { render, fireEvent } from '@testing-library/react';
 
 import { CartProvider, useCart } from './cartContext';
 
-// Mock any dependencies or API calls here if needed
-
-// Mock a component that uses the context
+// Created a TestComponent that uses the context
 const TestComponent = () => {
     const { state, dispatch } = useCart();
 
