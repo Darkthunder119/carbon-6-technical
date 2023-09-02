@@ -16,7 +16,7 @@ const ProductList = () => {
     const { data, isPending, error } = useFetch(API_URL);
 
     const handleChange = (event) => {
-        setSelectedCategory(event.target.value);
+        setSelectedCategory(event.target.value === 'clear' ? '' : event.target.value);
     };
 
     useEffect(() => {
@@ -33,14 +33,18 @@ const ProductList = () => {
             <div className="flex justify-end">
                 <FormControl className="w-[200px]">
                     <InputLabel id="select-label">
-                        Filter <FilterAltSharp />
+                        <span className="text-primaryPetrol">Filter</span>
+                        <FilterAltSharp className="text-primaryPetrol" />
                     </InputLabel>
                     <Select labelId="select-label" value={selectedCategory} label="Filter By" onChange={handleChange}>
                         {categories.map((category, i) => (
                             <MenuItem value={category} key={i}>
-                                {category}
+                                <span className="text-primaryPetrol">{category}</span>
                             </MenuItem>
                         ))}
+                        <MenuItem key="clear" value="clear">
+                            <span className="text-primaryPetrol">Clear selection</span>
+                        </MenuItem>
                     </Select>
                 </FormControl>
             </div>
